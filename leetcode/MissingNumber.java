@@ -8,7 +8,7 @@ public class MissingNumber {
         // since other number all appear twice, the only missing number only appeared once, 
         // and its the result
         int res = 0;
-        for(int i =0; i < nums.length; i ++){
+        for(int i = 0; i <= nums.length; i ++){
         	res ^= i;
         }
         for(int n: nums){
