@@ -5,7 +5,8 @@ public class LCP {
      * @return: The longest common prefix
      */
 	
-    // 1. take one string from the list (corner case: if len ==1, return only string, if == 0 or null, return "")
+    // 1. take one string from the list (corner case: if len ==1, return only string, 
+    //    if == 0 or null, return "")
     // 2. compare the char in that string to other strings in the list
     // 3. longest common prefix length <= shortest string in the list
     // 4. if char not equal or there is a string length < the common prefix -> jump out of the loop.

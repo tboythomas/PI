@@ -5,7 +5,8 @@ public class Anagrams{
      */
 
     // compart the sorted string to determine if two strings are anagrams or not.
-    // use hashmap to store the anagram words, key is the sorted words, value is the list of words that are anagrams.
+    // use hashmap to store the anagram words, key is the sorted string, value is the 
+    // list of words that are anagrams.
    public List<String> anagrams(String[] strs) {
   		if(strs == null || strs.length < 2){
   			return null;
