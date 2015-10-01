@@ -1,3 +1,6 @@
+// catalan number
+//  h(n) = h(1) * h(n-1) + h(2) * h(n-2) + h(3) * h(n-3)+...h(n-1) * h(1)
+
 public class GenerateParenthesis {
     public List<String> generateParenthesis(int n) {
         List<String> ans = new LinkedList<String>();
@@ -22,5 +25,22 @@ public class GenerateParenthesis {
     	if(right > left){
     		helper(ans, left, right - 1, cur + ")");
     	}
+    }
+
+    private void dfs(List<String> ans, int left, int right, String cur){
+        // # of right always < # of left
+        if(left < right){
+            return;
+        }
+        if(left == 0 && right == 0){
+            ans.add(cur);
+            return;
+        }
+        if(left > 0){
+            helper(ans, left - 1, right, cur + "(");
+        }
+        if(right >0){
+            helper(ans, left, right - 1, cur + ")");
+        }
     }
 }

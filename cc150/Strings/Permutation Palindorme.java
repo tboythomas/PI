@@ -1,4 +1,5 @@
-// for any string that has palindormed permutations(char in that strings must appeared even times and one char could appear once)
+// for any string that has palindormed permutations(char in that 
+// strings must appeared even times and one char could appear once)
 public class Permutation Palindorme{
 	public boolean Palindorme(String s){
 		if(s.length() == 0){

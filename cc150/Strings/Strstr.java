@@ -25,4 +25,30 @@ class Strstr{
         }
         return -1;
     }
+    // use pointer. Optimiziation 
+    public int strStr(String source, String target){
+        if(source == null || tartget == null || target.length() > source.length()){
+            return -1;
+        }
+        if(target.length == 0){
+            return 0;
+        }
+        for(int i = 0; i < source.length; i ++){
+            if(i + target.length > source.length){
+                return -1;
+            }
+            int p1 = i;
+            for(int j = 0; j < target.length; j ++){
+                if(source.charAt(p1) == target.charAt(j)){
+                    if(j == source.length - 1){
+                        return i;
+                    }
+                    p1++;
+                }else{
+                    break;
+                }
+            }
+        }
+        return -1;
+    }
 }
