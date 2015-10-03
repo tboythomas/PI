@@ -6,7 +6,8 @@ public class ListCycle {
         }
         ListNode fast = head;
         ListNode slow = head;
-        while(fast.next != null && fast.next.next != null){
+        // fast == null (happens to even number, fast.next == null happens to odd number)
+        while(fast!= null && fast.next != null){
             fast = fast.next.next;
             slow = slow.next;
             if(fast.val == slow.val){

@@ -11,7 +11,7 @@ public class DeleteNodeList {
  		if(node == null){
  			return;
  		}
-	// if the node is not the end
+	    // if the node is not the end
  		if(node.next != null){
 			int temp = node.next.val;
 			node.val = temp;

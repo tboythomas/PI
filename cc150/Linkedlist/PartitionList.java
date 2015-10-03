@@ -34,4 +34,26 @@ public class PartitionList {
     	current_l.next = fake_r.next;
     	return fake_l.next;
     }
+
+    // optimazition
+    public ListNode partition(ListNode head, int x){
+        if(head == null){
+            return head;
+        }
+        ListNode start = head;
+        ListNode end = head;
+        while(head != null){
+            ListNode temp = head.next;
+            if(head.val < x){
+                head.next = start;
+                start = head;
+            }else{
+                end.next = head;
+                end = head;
+            }
+            head = temp;
+        }
+        end.next = null;
+        return start;
+    }
 }
