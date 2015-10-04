@@ -4,7 +4,7 @@ public class RotateList {
      * @param k: rotate to the right k places
      * @return: the list after rotation
      */
-    //note: 
+    // note: 
     // move one node from the end to the front each time, use a counter to keep tracking.
     // Need to reset the head every time after rotating.
     public ListNode rotateRight(ListNode head, int k) {
@@ -15,11 +15,11 @@ public class RotateList {
 		while(counter < k){
 	    	ListNode runner = head;
 	    	counter++;
-	    	// corner case: 1-> null, need to check both runner.next and runner.next.next
+			// corner case: 1 -> null, if list is like 1-> null, 
+			// return itself since rotation doesnt change itself.
 			while(runner.next != null && runner.next.next != null){
 				runner = runner.next;
 			}
-			// corner case: 1 -> null, if list is like 1-> null, return itself since rotation doesnt change itself.
 			if(head.next != null){
 			    ListNode temp = runner.next;
 			    runner.next = null;
@@ -28,5 +28,39 @@ public class RotateList {
 			}
 		}
 		return head;
+    }
+
+    //optimization: if n > len, rotate n times = rotate n % len times.
+    public ListNode rotateRight(ListNode head, int k){
+    	if(head == null || head.next == null || k == 0){
+    		return head;
+    	}
+    	int len = 0;
+    	ListNode runner = head;
+    	while(runner != null){
+    		runner = runner.next;
+    		len++;
+    	}
+    	int counter = 0;
+    	runner = head;
+    	// move to pointer to the right place
+    	while(counter < len - k % len - 1){
+    		runner = runner.next;
+    		counter++;
+    	}
+    	// rotate
+    	ListNode temp = runner.next;
+    	// if k == len, temp is null, just return head, else rotate the list
+    	if(temp != null){
+        	runner.next = null;
+        	runner = temp;
+        	while(runner != null && runner.next != null){
+        		runner = runner.next;
+        	}
+        	runner.next = head;
+        	return temp;
+    	}else{
+    	    return head;
+    	}
     }
 }

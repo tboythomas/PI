@@ -13,6 +13,7 @@ public class ReverseList {
     	if(head == null || head.next == null){
     		return head;
     	}
+        // handle the front case first
     	ListNode result = head;
     	head = head.next;
     	result.next = null;
