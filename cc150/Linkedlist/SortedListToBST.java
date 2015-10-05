@@ -1,7 +1,8 @@
 
 // note:
 // first get the length of the list, then use recursion to build the binary tree
-// in order to make it balanced, the left tree has (size/2) nodes and the right tree has(size - 1 - size/2) nodes
+// in order to make it balanced, the left tree has (size/2) nodes and the right 
+// tree has(size - 1 - size/2) nodes
 // need a global variable current to keep track of the change in list.
 public class SortedListToBST {
     /**

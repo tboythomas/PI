@@ -5,7 +5,7 @@ public class SortList {
                     using constant space complexity.
      */
 
-    // note: merge sort , separate the lists, and then megerge
+    //  note: merge sort , separate the lists, and then megerge
     //  need to review merge sort. recursion to keep dividing!
     public ListNode sortList(ListNode head) {  
         if(head == null || head.next == null){

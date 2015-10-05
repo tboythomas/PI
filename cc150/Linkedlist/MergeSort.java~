@@ -1,0 +1,48 @@
+public class MergeSort{
+    // store the result array 
+    private Comparable[] temp;
+    
+    public static void main(String[] args){
+	int[] test = {10,4,50,34};
+	mergesort(test);
+	System.out.println(test);
+    }
+
+    private static void mergesort(Comparable[] nums){
+	Comparable[] temp = new Comparable[nums.length];
+	mergesort_helper(nums, 0, nums.length - 1);
+    }
+    
+    private static void mergesort_helper(Comparable[] nums, int left, int right){
+	if(left < right){
+	    int middle = left + (right - left) / 2;
+	    mergesort_helper(nums, left, middle);
+	    mergesort_helper(nums, middle + 1, right);
+	    merge(nums,left, middle, right);
+	}
+    }
+    
+    private static void merge(Comparable[] nums, int left, int middle, int right){
+	for(int i = left; i <= right; i++){
+	    temp[i] = nums[i];
+	}
+	int p1 = left;
+	int p2 = middle + 1;
+	int res_pt = left;
+	while(p1 <= right && p2 <= right){
+	    if(temp[p1] <= temp[p2]){
+		nums[res_pt] = temp[p1];
+		p1++;
+	    }else{
+		nusm[res_pt] = temp[p2];
+		p2++;
+	    }
+	    res_pt++;
+	}
+	while(p1 <= middle){
+	    nums[p1] = temp[p1];
+	    p1++;
+	    res_pt++;
+	}
+    }
+}
