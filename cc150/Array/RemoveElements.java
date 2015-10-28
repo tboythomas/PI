@@ -19,5 +19,19 @@ public class RemoveElements {
         }
         return pointer + 1;
     }
+    
+    // method 2: one pointer to track ele != val
+    public int removeElement(int[] A, int elem){
+        if(A == null || A.length == 0){
+            return 0;
+        }
+        int ind = 0;
+        for(int i = 0; i < A.length; i ++){
+            if(A[i] != elem){
+                A[ind++] = A[i];
+            }   
+        }
+        return ind;
+    }
 }
 
