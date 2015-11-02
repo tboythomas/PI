@@ -11,14 +11,13 @@ public class 3Sum {
 
     // For this problem, using a loop to take one number at each time, then transfer this to 2 sum problem. (watch out the limit
     // for each loop and the duplicated values)
-    public ArrayList<ArrayList<Integer>> threeSum(int[] numbers) {
-    	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> threeSum(int[] numbers) {
+    	List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(numbers == null || numbers.length < 2){
         	return result;
         }
         Arrays.sort(numbers);
-        // i < len -2 buz of line 18
-        for(int i = 0; i < numbers.length - 2; i ++){
+        for(int i = 0; i < numbers.length; i ++){
             //skip the duplicates
         	if( i != 0 && numbers[i] == numbers[i - 1]){
         		continue;
@@ -28,11 +27,11 @@ public class 3Sum {
     		while(left < right){
     			int sum = numbers[i] + numbers[left] + numbers[right];
     			if(sum == 0){
-    				ArrayList<Integer> temp = new ArrayList<Integer>();
+    				List<Integer> temp = new ArrayList<Integer>();
     				temp.add(numbers[i]);
     				temp.add(numbers[left]);
     				temp.add(numbers[right]);
-    				result.add(temp);
+    				result.add(new ArrayList(temp));
     				left++;
     				right--;
     				//skip the duplicates,(left and left -1)
