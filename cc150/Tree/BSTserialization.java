@@ -2,7 +2,8 @@ class BSTserialization {
 
 
 // note: 
-//   serialize: generate a string in preorder, (null node will be makred as -1), use "." to separate each node.val
+//   serialize: generate a string in preorder, (null node will be makred as -1), 
+//   use "." to separate each node.val
 //   deserialize: use a counter to keep track of the process, genreate the tree in preorder.
 class Solution {
     /**
