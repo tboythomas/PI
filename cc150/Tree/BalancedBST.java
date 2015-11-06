@@ -10,7 +10,7 @@ public class BalancedBST {
         if(root == null){
         	return true;
         }
-        if(Math.max(Depth(root.left) - Depth(root.right)) > 1){
+        if(Math.abs(Depth(root.left) - Depth(root.right)) > 1){
         	return false;
         }
         return isBalanced(root.left) && isBalanced(root.right);
