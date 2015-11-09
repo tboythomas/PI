@@ -4,6 +4,7 @@ public class Solution {
         if(nums == 0 || nums.length == 0){
             return res;
         }
+        Arrays.sort(nums);
         List<Integer> cur = new ArrayList<Integer>();
         helper(nums, res, cur, 0);
         return res;
@@ -14,8 +15,8 @@ public class Solution {
         res.add(new ArrayList(cur));
         
         for(int i = pos; i < nums.length; i++){
-            cur.add(nums[pos]);
-            helper(nums, res, cur, pos+1);
+            cur.add(nums[i]);
+            helper(nums, res, cur, i + 1);
             cur.remove(cur.size() - 1);
         }
     } 
